@@ -13,7 +13,7 @@ st.markdown("Upload a PDF, extract the Table of Contents using AI, edit it, and 
 with st.sidebar:
     st.header("Configuration")
     api_key = st.text_input("OpenAI API Key", type="password")
-    base_url = st.text_input("API Base URL", value="https://ai.hybgzs.com/v1")
+    base_url = st.text_input("API Base URL", value="https://api.openai.com/v1")
     model_name = st.text_input("Model Name", value="gpt-4o")
     
     st.header("Help")
@@ -103,7 +103,7 @@ if uploaded_file and api_key:
                 "title": st.column_config.TextColumn("Title"),
                 "page": st.column_config.NumberColumn("Page Number")
             },
-            width="stretch"
+            use_container_width=True
         )
         
         if st.button("Write TOC to PDF"):

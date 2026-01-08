@@ -57,14 +57,30 @@ streamlit run main.py
 ## 📖 使用指南
 
 1.  **配置 API**: 在左侧边栏输入你的 OpenAI API Key 、 Base URL（如果使用中转服务）和 Model Name。
-2.  **上传文件**: 点击上传你需要处理的 PDF 文件。
-3.  **指定目录页**: 输入目录所在的 PDF 页码范围（支持 `5-8` 或 `5,6,7` 格式）。
-4.  **设置偏移量**:
-    *   找到正文第 1 页在 PDF 播放器中的实际页码（例如第 15 页）。
-    *   计算偏移量：`15 - 1 = 14`。
-    *   在界面 "Page Offset" 输入框中填入 `14`。
-5.  **提取与编辑**: 点击 **"Extract TOC from PDF"**。等待 AI 识别完成后，你可以在右侧表格中查看结果。如有错误，可直接修改标题、页码或调整层级（Level）。
-6.  **生成下载**: 点击 **"Write TOC to PDF"**，处理完成后即可下载带有高清书签的新 PDF 文件。
+
+![image-20260107114916153](E:\A_doc\Code\PDFCatalogueGenerator\README.assets\image-20260107114916153.png)
+
+1.  **上传文件**: 点击上传你需要处理的 PDF 文件。这里以一本目录错乱的《吉米多维奇数学高等数学》为例。
+
+![image-20260107115026731](E:\A_doc\Code\PDFCatalogueGenerator\README.assets\image-20260107115026731.png)
+
+1.  **指定目录页**: 输入目录所在的 PDF 页码范围（支持 `7-10` 或 `7,8,9,10` 格式）。
+2.  **设置偏移量**:
+    *   找到正文第 1 页在 PDF 播放器中的实际页码（例如第 11 页）。
+    *   计算偏移量：`11 - 1 = 10`。
+    *   在界面 "Page Offset" 输入框中填入 `10`。
+
+![image-20260107115223325](E:\A_doc\Code\PDFCatalogueGenerator\README.assets\image-20260107115223325.png)
+
+3. **提取与编辑**: 点击 **"Extract TOC from PDF"**。等待 AI 识别完成后，你可以在右侧表格中查看结果。如有错误，可直接修改标题、页码或调整层级（Level）。
+
+![image-20260108122558066](E:\A_doc\Code\PDFCatalogueGenerator\README.assets\image-20260108122558066.png)
+
+4. **生成下载**: 点击 **"Write TOC to PDF"**，处理完成后即可点击**“Download PDF with TOC”**下载带有书签的新 PDF 文件。
+
+打开处理后的PDF文件，可以看到书签栏出现了正确的目录。
+
+![image-20260108122756055](E:\A_doc\Code\PDFCatalogueGenerator\README.assets\image-20260108122756055.png)
 
 ## 📂 项目结构
 
@@ -79,8 +95,8 @@ PDFCatalogueGenerator/
 
 ## ⚠️ 注意事项
 
-*   **API 成本**: 图像识别需要消耗 Token。GPT-4o Vision 的价格相对合理，但处理超长目录（数十页）时仍请留意你的 API 配额。
-*   **隐私安全**: 请确保你使用的 API 渠道安全可靠。本项目上传的 PDF 仅在本地临时处理，但被选中的目录页截图会被发送给 OpenAI 服务器进行识别。
+*   **API 成本**: 图像识别需要消耗 Token，处理超长目录（数十页）时请留意你的 API 配额。
+*   **隐私安全**: 请确保你使用的 API 渠道安全可靠。本项目上传的 PDF 仅在本地临时处理，但被选中的目录页截图会被发送给 服务商的服务器进行识别。
 
 ## 🤝 贡献
 
